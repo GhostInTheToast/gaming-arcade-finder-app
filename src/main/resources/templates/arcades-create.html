@@ -9,19 +9,19 @@
     <!-- Page Content-->
     <section layout:fragment="body" class="py-5">
         <div class="container">
-        <form>
+        <form role="form" method="post" th:action="@{/arcades/new}" th:object="${arcade}">
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="inputEmail4">Email</label>
+                    <label for="inputEmail4">Name</label>
                     <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="inputPassword4">Password</label>
+                    <label for="inputPassword4">PhotoUrl</label>
                     <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
                 </div>
             </div>
             <div class="form-group mb-3">
-                <label for="inputAddress">Address</label>
+                <label for="inputAddress">Content</label>
                 <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
             </div>
 

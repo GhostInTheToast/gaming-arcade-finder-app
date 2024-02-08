@@ -37,7 +37,7 @@ public class ArcadeController {
 
     @PostMapping("/arcades/new")
     public String saveArcade(@ModelAttribute("arcade") Arcade arcade) {
-        arcadeService.save();
-        return "redirect:/clubs";
+        arcadeService.saveArcade(arcade);
+        return "redirect:/arcades";
     }
 }

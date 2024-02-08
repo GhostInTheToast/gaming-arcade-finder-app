@@ -25,6 +25,11 @@ public class ArcadeServiceImpl implements ArcadeService {
         return arcades.stream().map((arcade) -> mapToArcadeDto(arcade)).collect(Collectors.toList());
     }
 
+    @Override
+    public Arcade saveArcade(Arcade arcade) {
+        return arcadeRepository.save(arcade);
+    }
+
     private ArcadeDto mapToArcadeDto(Arcade arcade) {
         ArcadeDto arcadeDto = ArcadeDto.builder()
                 .id(arcade.getId())
