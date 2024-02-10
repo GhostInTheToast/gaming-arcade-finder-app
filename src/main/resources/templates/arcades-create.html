@@ -12,35 +12,39 @@
         <form role="form" method="post" th:action="@{/arcades/new}" th:object="${arcade}">
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="inputEmail4">Name</label>
+                    <label for="name">Name</label>
                     <input
-                            type="email"
+                            type="text"
                             class="form-control"
-                            id="inputEmail4"
-                            placeholder="Email">
+                            id="name"
+                            name="name"
+                            th:field="*{name}"
+                            placeholder="Name">
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="inputPassword4">PhotoUrl</label>
+                    <label for="photoUrl">PhotoUrl</label>
                     <input
-                            type="password"
+                            type="text"
                             class="form-control"
-                            id="inputPassword4"
-                            placeholder="Password">
+                            id="photoUrl"
+                            name="photoUrl"
+                            th:field="*{photoUrl}"
+                            placeholder="Photo Url">
                 </div>
+                <div class="form-group mb-3">
+                    <label for="content">Content</label>
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="content"
+                            name="content"
+                            th:field="*{content}"
+                            placeholder="Content">
+                </div>
+                <button type="submit" class="btn btn-primary">Create Arcade</button>
             </div>
-            <div class="form-group mb-3">
-                <label for="inputAddress">Content</label>
-                <input
-                        type="text"
-                        class="form-control"
-                        id="inputAddress"
-                        placeholder="1234 Main St">
-            </div>
-
-            <button type="submit" class="btn btn-primary">Create Arcade</button>
-
         </form>
-        </div>>
+        </div>
     </section>
 </main>
 </body>
