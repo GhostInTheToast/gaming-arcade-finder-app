@@ -7,5 +7,10 @@ import java.util.List;
 
 public interface ArcadeService {
     List<ArcadeDto> findAllArcades();
+
     Arcade saveArcade(Arcade arcade);
+
+    ArcadeDto findArcadeById(Long arcadeId);
 }
+
+

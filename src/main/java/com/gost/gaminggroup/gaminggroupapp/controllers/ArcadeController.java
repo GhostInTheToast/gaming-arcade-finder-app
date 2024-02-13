@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
@@ -39,5 +40,12 @@ public class ArcadeController {
     public String saveArcade(@ModelAttribute("arcade") Arcade arcade) {
         arcadeService.saveArcade(arcade);
         return "redirect:/arcades";
+    }
+
+    @GetMapping("/arcades/{arcadeId/edit}")
+    public String editArcadeForm(@PathVariable("arcadeId") long arcadeId, Model model) {
+        ArcadeDto arcade = arcadeService.findArcadeById(arcadeId);
+        model.addAttribute("arcade", arcade);
+        return "arcades-edit";
     }
 }
