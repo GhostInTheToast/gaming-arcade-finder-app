@@ -42,10 +42,17 @@ public class ArcadeController {
         return "redirect:/arcades";
     }
 
-    @GetMapping("/arcades/{arcadeId/edit}")
+    @GetMapping("/arcades/{arcadeId}/edit")
     public String editArcadeForm(@PathVariable("arcadeId") long arcadeId, Model model) {
         ArcadeDto arcade = arcadeService.findArcadeById(arcadeId);
         model.addAttribute("arcade", arcade);
         return "arcades-edit";
+    }
+
+    @PostMapping("/arcades/{arcadeId}/edit")
+    public String updateClub(@PathVariable("arcadeId") Long arcadeId, @ModelAttribute("arcade") ArcadeDto arcade) {
+        arcade.setId(arcadeId);
+        arcadeService.updateArcade(arcade);
+        return "redirect:/arcades";
     }
 }

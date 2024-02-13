@@ -2,14 +2,15 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout}">
 <head>
-    <title>Arcade Create</title>
+    <title>Arcade Edit</title>
 </head>>
 <body class="d-flex flex-column h-100">
 <main class="flex-shrink-0">
     <!-- Page Content-->
     <section layout:fragment="body" class="py-5">
         <div class="container">
-            <form role="form" method="post" th:action="@{/arcades/new}" th:object="${arcade}">
+            <form role="form" method="post" th:action="@{/arcades/{arcadeId}/edit(arcadeId=${arcade.id})}" th:object="${arcade}">
+                <input type="hidden" th:field="*{id}">
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="name">Name</label>

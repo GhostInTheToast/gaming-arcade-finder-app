@@ -11,6 +11,8 @@ public interface ArcadeService {
     Arcade saveArcade(Arcade arcade);
 
     ArcadeDto findArcadeById(Long arcadeId);
+
+    void updateArcade(ArcadeDto arcade);
 }
 
 

@@ -38,6 +38,24 @@ public class ArcadeServiceImpl implements ArcadeService {
         return mapToArcadeDto(arcade);
     }
 
+    @Override
+    public void updateArcade(ArcadeDto arcadeDto) {
+        Arcade arcade = mapToArcade(arcadeDto);
+        arcadeRepository.save(arcade);
+    }
+
+    private Arcade mapToArcade(ArcadeDto arcade) {
+        Arcade arcadeDto = Arcade.builder()
+                .id(arcade.getId())
+                .name(arcade.getName())
+                .photoUrl(arcade.getPhotoUrl())
+                .content(arcade.getContent())
+                .createdOn(arcade.getCreatedOn())
+                .updatedOn(arcade.getUpdatedOn())
+                .build();
+        return arcadeDto;
+    }
+
     private ArcadeDto mapToArcadeDto(Arcade arcade) {
         ArcadeDto arcadeDto = ArcadeDto.builder()
                 .id(arcade.getId())
