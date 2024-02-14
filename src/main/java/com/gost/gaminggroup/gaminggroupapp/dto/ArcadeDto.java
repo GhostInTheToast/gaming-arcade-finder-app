@@ -6,7 +6,6 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 // Dto object (data transfer object) for transferring less info. Made ahead of time just in case.
-
 @Data
 @Builder
 public class ArcadeDto {
