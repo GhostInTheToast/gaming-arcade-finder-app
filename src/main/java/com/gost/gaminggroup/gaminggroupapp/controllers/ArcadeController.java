@@ -55,4 +55,5 @@ public class ArcadeController {
         arcadeService.updateArcade(arcade);
         return "redirect:/arcades";
     }
+
 }
